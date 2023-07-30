@@ -1,3 +1,5 @@
+Pour le code de l'API, j'ai réutilisé le code de mon projet de fin d'année.
+
 # Principes et standards REST : une approche pour les API Web
 
 ## API
