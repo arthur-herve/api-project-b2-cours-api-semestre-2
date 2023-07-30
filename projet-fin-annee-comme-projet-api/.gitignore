@@ -6,6 +6,7 @@ backend/node_modules/
 backend/controllers/token-generator-dev.ts
 backend/dist/controllers/token-generator-dev.js
 backend/dist/controllers/token-generator-dev.js.map
+backend/.vscode
 # Build
 backend/dist/config.json
 backend/dist/CONFIG-FILES

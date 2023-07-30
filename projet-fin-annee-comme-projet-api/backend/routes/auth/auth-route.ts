@@ -1,7 +1,4 @@
-import express, { Router } from 'express';
-import * as config from '../../config.json';
-import sql from 'mssql';
-import { LoginBody } from '../../models/auth/auth-model';
+import express from 'express';
 import { login, signup, updatePasswordPATCH } from '../../controllers/auth/authentication';
 import {isAuthenticated, isModifyingUserPswdRight} from '../../middleware/is-auth'; 
 

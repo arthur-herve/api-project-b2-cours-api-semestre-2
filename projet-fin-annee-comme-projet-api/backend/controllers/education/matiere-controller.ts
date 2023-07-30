@@ -1,7 +1,5 @@
 import express from "express";
-import { CoursEnum, CourseEnum } from "../../models/education/course-model";
 import isId from "../../models/integer-model";
-import { onlyLowercaseRegExp } from "../../Regex/string-regex";
 import * as config from "../../config.json";
 import sql from "mssql";
 import {

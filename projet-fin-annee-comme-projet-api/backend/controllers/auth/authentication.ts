@@ -1,12 +1,10 @@
 import bcrypt from "bcryptjs";
-import validationResult from "express-validator";
 import { LoginBody } from "../../models/auth/auth-model";
 import * as config from "../../config.json";
 import sql from "mssql";
 import secretPass from "../../CONFIG-FILES/secret-password.json";
 import * as jwt from "jsonwebtoken";
 import express from "express";
-import { error } from "console";
 import {
   UtilisateurEnum,
   newFunctionQuery,

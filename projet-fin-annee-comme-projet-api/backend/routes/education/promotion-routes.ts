@@ -1,7 +1,6 @@
 import express from 'express';
 import {isAuthenticated} from '../../middleware/is-auth';
-import { isAdmin, isEducationManager } from '../../middleware/roles-middleware';
-import { PromotionEnum } from '../../models/education/promotion-model';
+import { isEducationManager } from '../../middleware/roles-middleware';
 import { newPromotionPOST, patchPromotionPATCH, getPaginatedPromotionGET, getPromotionByIdGET, deletePromotionDELETE } from '../../controllers/education/promotion-controller';
 
 const router = express.Router();

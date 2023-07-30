@@ -1,5 +1,3 @@
-// import tokenGenerator from './controllers/token-generator-dev';
-
 import * as config from "./config.json";
 import express from "express";
 import bodyParser from "body-parser";
@@ -17,27 +15,10 @@ import cors from "cors";
 import { sqlServerTest } from "./middleware/slq-test-middleware";
 const app = express();
 const portHost = config.HOST;
-const API_URL = config.API;
 
 app.use(bodyParser.json());
-
-///// 1
-// app.use(
-//   (req: express.Request, res: express.Response, next: express.NextFunction) => {
-//     res.header("Access-Control-Allow-Origin", API_URL); // update to match the domain you will make the request from
-//     res.header(
-//       "Access-Control-Allow-Headers",
-//       "Origin, X-Requested-With, Content-Type, Accept"
-//     );
-//     next();
-//   }
-// );
-
-///// 2
 app.use(cors());
-
 app.use(sqlServerTest);
-// app.use(tokenGenerator);
 app.use(auth);
 app.use(roles);
 app.use(campus);

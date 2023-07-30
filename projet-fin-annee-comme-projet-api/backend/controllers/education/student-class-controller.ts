@@ -1,7 +1,4 @@
 import express from "express";
-import { CoursEnum, CourseEnum } from "../../models/education/course-model";
-import isId from "../../models/integer-model";
-import { onlyLowercaseRegExp } from "../../Regex/string-regex";
 import * as config from "../../config.json";
 import sql from "mssql";
 import {
@@ -9,8 +6,6 @@ import {
   StudClassPOST,
   queryGetOneClassGET,
 } from "../../models/education/student-class-model";
-import { request } from "http";
-import { EtudiantEnum } from "../../models/users/etudiant-model";
 
 const newClassPOST = (req: express.Request, res: express.Response) => {
   try {

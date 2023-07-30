@@ -1,7 +1,6 @@
 import express from "express";
 import {
   CampusEnum,
-  CampusPOST,
 } from "../../models/infrastructure/campus-model";
 import * as config from "../../config.json";
 import sql from "mssql";

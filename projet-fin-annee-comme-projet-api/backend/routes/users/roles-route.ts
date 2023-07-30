@@ -40,10 +40,6 @@ router.get(
   attachePromoGETList
 );
 
-/**
- * avant =
- * /roles/intervenant/page/:pageNumber/rows/:rowsNumber/order/:orderBy/
- */
 router.get(
   '/roles/intervenants/page/:pageNumber/rows/:rowsNumber/order/:orderBy/',
   isAuthenticated,

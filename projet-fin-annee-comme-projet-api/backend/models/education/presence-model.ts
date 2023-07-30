@@ -4,13 +4,6 @@ import { UtilisateurEnum } from "../users/user-model";
 import { CoursEnum } from "./course-model";
 import { StudClassEnum } from "./student-class-model";
 
-export interface PresenceModel {
-  id_presence: number;
-  est_present: boolean;
-  est_absent: boolean;
-  id_cours: number;
-  id_etudiant: number;
-}
 
 export enum PresenceEnum {
   NOM_TABLE = "Presence",

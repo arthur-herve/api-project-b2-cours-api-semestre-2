@@ -1,15 +1,9 @@
-/**
- * I want a controller page that manage the presence of students in a êculiar course for sql database
- */
-// Path: backend\controllers\education\presence-controller.ts
-// Compare this snippet from backend\routes\education\student-class-route.ts:
 import express from "express";
 import sql from "mssql";
 import * as config from "../../config.json";
 import {
   PresencesBodyRequest,
   StudentPresence,
-  queryNewPresencePOST,
   queryUpdatePresencePATCH,
   queryUpdatePresencePUT,
 } from "../../models/education/presence-model";
@@ -64,7 +58,6 @@ const updatePresencesPUT = (req: express.Request, res: express.Response) => {
 };
 
 const updatePresencesPATCH = (req: express.Request, res: express.Response) => {
-  // A function that get value from the request body, create an sql query and update a row in the presence table
   try {
     const body = req.body;
     const idPresence: number = Number(req.params.idPresence);

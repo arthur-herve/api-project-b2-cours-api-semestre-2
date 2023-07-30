@@ -1,4 +1,5 @@
-Pour le code de l'API, j'ai réutilisé le code de mon projet de fin d'année.
+## Projet  
+Pour le code de l'API, j'ai réutilisé le code de mon projet de fin d'année. Ce projet a été réalisé avec l'aide de Copilot pour certaines parties : les paramètres de Copilot sont tel qu'il ne pouvait piocher que dans mon code. Copilote n'a pas pu aller chercher de solution depuis un code existant.
 
 # Principes et standards REST : une approche pour les API Web
 

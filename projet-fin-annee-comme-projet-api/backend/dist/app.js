@@ -1,5 +1,4 @@
 "use strict";
-// import tokenGenerator from './controllers/token-generator-dev';
 var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
     if (k2 === undefined) k2 = k;
     var desc = Object.getOwnPropertyDescriptor(m, k);
@@ -44,23 +43,9 @@ const cors_1 = __importDefault(require("cors"));
 const slq_test_middleware_1 = require("./middleware/slq-test-middleware");
 const app = (0, express_1.default)();
 const portHost = config.HOST;
-const API_URL = config.API;
 app.use(body_parser_1.default.json());
-///// 1
-// app.use(
-//   (req: express.Request, res: express.Response, next: express.NextFunction) => {
-//     res.header("Access-Control-Allow-Origin", API_URL); // update to match the domain you will make the request from
-//     res.header(
-//       "Access-Control-Allow-Headers",
-//       "Origin, X-Requested-With, Content-Type, Accept"
-//     );
-//     next();
-//   }
-// );
-///// 2
 app.use((0, cors_1.default)());
 app.use(slq_test_middleware_1.sqlServerTest);
-// app.use(tokenGenerator);
 app.use(auth_route_1.default);
 app.use(roles_route_1.default);
 app.use(campus_route_1.default);

@@ -1,13 +1,9 @@
-import { response } from "express";
 import { RoomEnum } from "../infrastructure/room-model";
 import { PresenceEnum } from "../presence-model";
 import { EtudiantEnum } from "../users/etudiant-model";
-import { IntervenantEnum } from "../users/intervenant";
 import { RolesEnum } from "../users/roles-model";
 import { UtilisateurEnum } from "../users/user-model";
 import { MatiereEnum } from "./matiere-model";
-import { PresenceModel } from "./presence-model";
-import { PromotionEnum } from "./promotion-model";
 import { StudClassEnum } from "./student-class-model";
 
 export interface CourseEnum {
@@ -173,22 +169,6 @@ export const queryCoursesGET = (
   return query;
 };
 
-export const coursesPagesGETQuery = (
-  startDate: string,
-  numberOfDays: number
-) => {
-  const query = `
-  DECLARE @StartDate DATE = '${startDate}';
-  DECLARE @EndDate DATE = DATEADD(DAY, ${numberOfDays}, @StartDate);
-
-  SELECT *
-  FROM ${CoursEnum.NOM_TABLE}
-  WHERE ${CoursEnum.DATE} BETWEEN @StartDate AND @EndDate;
-  `;
-  return query;
-};
-
-// Function that returns an SQL QUERY to get all students of a specific course
 export const allStudentsOfACourseGETQuery = (idCourse: number): string => {
   const query = `
   SELECT
@@ -250,18 +230,6 @@ export const queryGetCourseAndStudentsGET = (idCours: string): string => {
   LEFT JOIN ${EtudiantEnum.NOM_TABLE} ON ${EtudiantEnum.NOM_TABLE}.${EtudiantEnum.FK_CLASSE} = ${CoursEnum.NOM_TABLE}.${CoursEnum.FK_CLASSE}
   LEFT JOIN ${UtilisateurEnum.NOM_TABLE} ON ${UtilisateurEnum.NOM_TABLE}.${UtilisateurEnum.PK} = ${EtudiantEnum.NOM_TABLE}.${EtudiantEnum.FK_UTILISATEUR}
   WHERE ${CoursEnum.NOM_TABLE}.${CoursEnum.PK} = '${idCours}'
-  `;
-  return query;
-};
-
-export const queryCreateAStudentPresencePOST = (
-  newStudentPresence: PresenceModel
-): string => {
-  const query = `
-  INSERT INTO ${PresenceEnum.NOM_TABLE}
-  (${PresenceEnum.FK_ETUDIANT}, ${PresenceEnum.FK_COURS})
-  VALUES
-  (${newStudentPresence.id_etudiant}, ${newStudentPresence.id_cours})
   `;
   return query;
 };

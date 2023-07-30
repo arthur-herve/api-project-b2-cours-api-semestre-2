@@ -1,6 +1,6 @@
 import { RolesTypePOST } from '../models/users/roles-model';
 import * as jwt from 'jsonwebtoken';
-import express, { response } from 'express';
+import express from 'express';
 import * as secretPass from '../CONFIG-FILES/secret-password.json';
 import { onlyLowercaseRegExp } from '../Regex/string-regex';
 import { isRightRoleEnum } from '../models/users/roles-model';

@@ -12,7 +12,6 @@ import {
 import * as config from "../../config.json";
 import sql from "mssql";
 import isId from "../../models/integer-model";
-import { SchoolEnum } from "../../models/infrastructure/school-model";
 
 const newPromotionPOST = (
   request: express.Request,
